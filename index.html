@@ -111,11 +111,11 @@
   <header class="masthead">
     <p class="kicker">OMEGA Study &middot; Gallbladder Cancer</p>
     <h1>Futile Surgery Risk Score</h1>
-    <p class="sub">A preoperative tool to estimate the probability of futile surgery (recurrence or death within six months of resection) in gallbladder cancer, derived from the OMEGA global multicentre cohort.</p>
+    <p class="sub">A prognostic risk score for futile surgery (recurrence or death within six months of resection) in gallbladder cancer, derived from the OMEGA global multicentre cohort. It stratifies the risk of futile surgery and can inform preoperative decision-making alongside adequate staging.</p>
   </header>
 
   <div class="card">
-    <h2>Enter preoperative parameters</h2>
+    <h2>Enter parameters</h2>
 
     <div class="field">
       <div class="label">Charlson Comorbidity Index</div>
@@ -174,7 +174,7 @@
         <div class="marker" id="marker"></div>
       </div>
       <div class="scaletags"><span>0%</span><span>~28%</span><span>55%</span></div>
-      <div class="threshlab">Dashed line: pre-specified 20% clinical decision threshold. Cohort prevalence of futile surgery was ~19%.</div>
+      <div class="threshlab">Dashed line: pre-specified 20% clinical decision threshold. Cohort prevalence of futile surgery was 19.6%.</div>
     </div>
 
     <div class="btnrow">
@@ -186,12 +186,12 @@
   <details>
     <summary>How the score works</summary>
     <div class="body">
-      <p style="font-size:14.5px;color:var(--muted)">Four preoperatively assessable variables were independently associated with futile surgery on multivariable logistic regression and combined into a points-based score. The total score maps to a predicted probability of futile surgery:</p>
+      <p style="font-size:14.5px;color:var(--muted)">Four readily available clinicopathological variables were independently associated with futile surgery on multivariable logistic regression and combined into a points-based score. The total score maps to a predicted probability of futile surgery:</p>
       <table class="lookup">
         <thead><tr><th>Total score</th><th>Predicted probability of futile surgery</th></tr></thead>
         <tbody id="lookupBody"></tbody>
       </table>
-      <p style="font-size:13px;color:var(--muted);margin-top:12px">Model discrimination: area under the curve 0.756. Performance was maintained across high and low or middle income settings and across high and low prevalence regions (area under the curve 0.74–0.77), and the score showed net clinical benefit on decision curve analysis across threshold probabilities of approximately 13% to 55%.</p>
+      <p style="font-size:13px;color:var(--muted);margin-top:12px">Model discrimination: area under the curve 0.760, in a cohort of 2573 patients of whom 504 (19.6%) had futile surgery. Performance was maintained across high and low or middle income settings and across high and low prevalence regions (area under the curve 0.75–0.77), and the score showed net clinical benefit on decision curve analysis across threshold probabilities of approximately 6% to 56%.</p>
     </div>
   </details>
 
@@ -208,7 +208,7 @@
 
 <script>
   // Published probability lookup (per integer score, %)
-  var PROB = {0:5.5, 1:7.5, 2:10.1, 3:13.6, 4:18.0, 5:23.4, 6:29.9, 7:37.3, 8:45.4, 9:53.7};
+  var PROB = {0:5.5, 1:7.5, 2:10.2, 3:13.7, 4:18.1, 5:23.6, 6:30.1, 7:37.6, 8:45.6, 9:53.9};
   var MAXPROB = 55; // scale maximum
   var THRESH = 20;  // clinical decision threshold (%)
 
